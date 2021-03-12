@@ -1,5 +1,5 @@
 header{
-    background-color: #26a69a;
+    background-color: #2665a6;
     text-align: center;
     font-size: xxx-large;
     color: white;
@@ -20,13 +20,14 @@ header{
     vertical-align: middle;
 }
 
-.list-check{
-    height: 40%;
+.nueva-tarea{
     width: 100%;
+    left: 0px;
+    height: 10em;
     overflow-y: scroll;
-    background-color: #e8e8e8;
-    margin: 10px 0px;   
-    position: absolute;
+    position: relative;
+    border-style: solid;
+    border-width: thin;
 }
 
 .list-check p{
@@ -37,5 +38,69 @@ header{
     vertical-align: -webkit-baseline-middle;
 }
 
+.img-exclamacion{
+    border-radius: 100%;
+}
+
+#btn-agregar{
+    border-radius: 5px;
+    margin: 10px;
+    background-color: #2665a6;
+}
+
+.btn-agregar img{
+    height: 1em;
+    border-radius: 100%;
+}
 
 
+.containner-checks{
+    border-style: solid;
+    border-width: thin;
+    overflow-y: scroll;
+    height: 66%;
+    position: absolute;
+    width: 100%;
+}
+
+.item-check{
+    display: flex;
+    background: #2665a6;
+    background: linear-gradient( 
+    0deg
+    , rgb(86 150 209) 26%, rgb(96 159 245) 59%, rgb(96 193 255) 100%);
+        
+    height: 3em;
+    margin-bottom: 5px;
+    padding: 0px 10px;
+}
+
+.item-check input,
+.item-check label{
+    display: inline-flex;
+    padding: 0px;
+}
+
+.item-check input{
+    height: 3em;
+    width: 1.5em;
+}
+
+.item-check span{
+    color: white;
+    align-items: center;
+    width: 83%;
+    padding: 0px 10px;
+    font-size: large;
+}
+
+
+.item-check label{
+    padding-top: 10px;
+    width: 90%;
+}
+
+[type="checkbox"].filled-in:checked+span:not(.lever):after {
+    border: 2px solid #262aa6 !important;
+    background-color: #155d9b !important;
+}

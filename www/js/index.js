@@ -27,3 +27,55 @@ function onDeviceReady() {
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     //document.getElementById('deviceready').classList.add('ready');
 }
+
+
+document.getElementById('btn-agregar').addEventListener('click', addTask);
+
+document.getElementById('txt-tarea').addEventListener('focus', clearText);
+
+function addTask(){
+    let texto = document.getElementById('txt-tarea').value;
+    
+    let id = Date.now();
+
+    var div = document.createElement("div");
+    div.setAttribute('id', "div-"+id);
+    div.setAttribute('class','item-check');
+
+    var lbl = document.createElement('label');    
+    lbl.setAttribute("for", `chk${id}`);
+
+    var spn = document.createElement('span');    
+    spn.innerHTML = texto;
+    
+    var chk = document.createElement('input');
+    chk.setAttribute('id', `chk${id}`);
+    chk.setAttribute("type", "checkbox");
+    chk.setAttribute('class','chk-tarea filled-in');
+
+    lbl.appendChild(chk);
+    lbl.appendChild(spn);
+
+    var img = document.createElement('img');
+    img.setAttribute('class','img-exclamacion');
+    img.src = "./img/exclamacion.png";
+    img.setAttribute('id', id);
+    img.addEventListener('click', eliminar);
+
+    div.appendChild(lbl);
+    div.appendChild(img);
+
+    document.getElementById('lst-tareas').appendChild(div);
+
+    document.getElementById('txt-tarea').value = "";
+}
+
+
+
+function eliminar(e){
+    document.getElementById('div-'+e.srcElement.id).remove();
+}
+
+function clearText(e){
+    e.srcElement.value = '';
+}
